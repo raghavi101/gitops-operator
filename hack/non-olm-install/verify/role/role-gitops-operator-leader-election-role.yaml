@@ -1,0 +1,55 @@
+﻿kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gitops-operator-leader-election-role
+  namespace: gitops-operator-system
+  uid: 62d43492-dde0-408b-ac33-036ae65fc676
+  resourceVersion: '10098'
+  creationTimestamp: '2023-05-11T10:29:22Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"Role","metadata":{"annotations":{},"name":"gitops-operator-leader-election-role","namespace":"gitops-operator-system"},"rules":[{"apiGroups":[""],"resources":["configmaps"],"verbs":["get","list","watch","create","update","patch","delete"]},{"apiGroups":["coordination.k8s.io"],"resources":["leases"],"verbs":["get","list","watch","create","update","patch","delete"]},{"apiGroups":[""],"resources":["events"],"verbs":["create","patch"]}]}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: rbac.authorization.k8s.io/v1
+      time: '2023-05-11T10:29:22Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:rules': {}
+rules:
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ''
+    resources:
+      - configmaps
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - coordination.k8s.io
+    resources:
+      - leases
+  - verbs:
+      - create
+      - patch
+    apiGroups:
+      - ''
+    resources:
+      - events

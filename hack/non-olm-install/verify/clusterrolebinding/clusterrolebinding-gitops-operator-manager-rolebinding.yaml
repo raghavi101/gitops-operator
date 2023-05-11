@@ -1,0 +1,31 @@
+﻿kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gitops-operator-manager-rolebinding
+  uid: c83d5924-2314-4988-8a2a-dc849b76b03e
+  resourceVersion: '10111'
+  creationTimestamp: '2023-05-11T10:29:26Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"gitops-operator-manager-rolebinding"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"gitops-operator-manager-role"},"subjects":[{"kind":"ServiceAccount","name":"gitops-operator-controller-manager","namespace":"gitops-operator-system"}]}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: rbac.authorization.k8s.io/v1
+      time: '2023-05-11T10:29:26Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:roleRef': {}
+        'f:subjects': {}
+subjects:
+  - kind: ServiceAccount
+    name: gitops-operator-controller-manager
+    namespace: gitops-operator-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: gitops-operator-manager-role

@@ -1,0 +1,27 @@
+﻿kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gitops-operator-metrics-reader
+  uid: 593ba9ab-a8a5-47e9-ae0c-23e0a48acae6
+  resourceVersion: '10101'
+  creationTimestamp: '2023-05-11T10:29:24Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRole","metadata":{"annotations":{},"name":"gitops-operator-metrics-reader"},"rules":[{"nonResourceURLs":["/metrics"],"verbs":["get"]}]}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: rbac.authorization.k8s.io/v1
+      time: '2023-05-11T10:29:24Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:rules': {}
+rules:
+  - verbs:
+      - get
+    nonResourceURLs:
+      - /metrics

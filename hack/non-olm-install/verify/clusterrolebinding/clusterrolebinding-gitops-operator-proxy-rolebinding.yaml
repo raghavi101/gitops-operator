@@ -1,0 +1,31 @@
+﻿kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gitops-operator-proxy-rolebinding
+  uid: fbbcc579-1042-4b2e-aa5c-75e4b213a790
+  resourceVersion: '10113'
+  creationTimestamp: '2023-05-11T10:29:26Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"ClusterRoleBinding","metadata":{"annotations":{},"name":"gitops-operator-proxy-rolebinding"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"gitops-operator-proxy-role"},"subjects":[{"kind":"ServiceAccount","name":"gitops-operator-controller-manager","namespace":"gitops-operator-system"}]}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: rbac.authorization.k8s.io/v1
+      time: '2023-05-11T10:29:26Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:roleRef': {}
+        'f:subjects': {}
+subjects:
+  - kind: ServiceAccount
+    name: gitops-operator-controller-manager
+    namespace: gitops-operator-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: gitops-operator-proxy-role

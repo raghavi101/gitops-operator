@@ -1,0 +1,32 @@
+﻿kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: gitops-operator-leader-election-rolebinding
+  namespace: gitops-operator-system
+  uid: 88b8dcbd-d940-492b-81d8-fdcb2fa258f6
+  resourceVersion: '10109'
+  creationTimestamp: '2023-05-11T10:29:25Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"annotations":{},"name":"gitops-operator-leader-election-rolebinding","namespace":"gitops-operator-system"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"gitops-operator-leader-election-role"},"subjects":[{"kind":"ServiceAccount","name":"gitops-operator-controller-manager","namespace":"gitops-operator-system"}]}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: rbac.authorization.k8s.io/v1
+      time: '2023-05-11T10:29:25Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+        'f:roleRef': {}
+        'f:subjects': {}
+subjects:
+  - kind: ServiceAccount
+    name: gitops-operator-controller-manager
+    namespace: gitops-operator-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: gitops-operator-leader-election-role
