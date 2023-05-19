@@ -1,0 +1,359 @@
+rules:
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - configmaps
+      - endpoints
+      - events
+      - persistentvolumeclaims
+      - pods
+      - secrets
+      - serviceaccounts
+      - services
+      - services/finalizers
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - update
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - namespaces
+      - resourcequotas
+  - verbs:
+      - get
+    apiGroups:
+      - ''
+    resources:
+      - pods/log
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - apps
+    resources:
+      - daemonsets
+      - deployments
+      - replicasets
+      - statefulsets
+  - verbs:
+      - update
+    apiGroups:
+      - apps
+    resources:
+      - deployments/finalizers
+    resourceNames:
+      - gitops-operator
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - apps.openshift.io
+    resources:
+      - '*'
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - argoproj.io
+    resources:
+      - applications
+      - appprojects
+      - argocds
+      - argocds/finalizers
+      - argocds/status
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - autoscaling
+    resources:
+      - horizontalpodautoscalers
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - batch
+    resources:
+      - cronjobs
+      - jobs
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - config.openshift.io
+    resources:
+      - clusterversions
+  - verbs:
+      - create
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - console.openshift.io
+    resources:
+      - consoleclidownloads
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - console.openshift.io
+    resources:
+      - consolelinks
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - console.openshift.io
+    resources:
+      - consoleplugins
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - monitoring.coreos.com
+    resources:
+      - prometheuses
+      - prometheusrules
+      - servicemonitors
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - networking.k8s.io
+    resources:
+      - ingresses
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - oauth.openshift.io
+    resources:
+      - oauthclients
+  - verbs:
+      - create
+      - get
+      - list
+      - watch
+    apiGroups:
+      - operators.coreos.com
+    resources:
+      - clusterserviceversions
+      - operatorgroups
+      - subscriptions
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - pipelines.openshift.io
+    resources:
+      - '*'
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - pipelines.openshift.io
+    resources:
+      - gitopsservices
+  - verbs:
+      - update
+    apiGroups:
+      - pipelines.openshift.io
+    resources:
+      - gitopsservices/finalizers
+  - verbs:
+      - get
+      - patch
+      - update
+    apiGroups:
+      - pipelines.openshift.io
+    resources:
+      - gitopsservices/status
+  - verbs:
+      - bind
+      - create
+      - delete
+      - deletecollection
+      - escalate
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - rbac.authorization.k8s.io
+    resources:
+      - '*'
+  - verbs:
+      - bind
+      - create
+      - delete
+      - deletecollection
+      - escalate
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - rbac.authorization.k8s.io
+    resources:
+      - clusterrolebindings
+      - clusterroles
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - route.openshift.io
+    resources:
+      - '*'
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - route.openshift.io
+    resources:
+      - routes
+      - routes/custom-host
+  - verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+    apiGroups:
+      - template.openshift.io
+    resources:
+      - templateconfigs
+      - templateinstances
+      - templates
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - ''
+    resources:
+      - configmaps
+  - verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - coordination.k8s.io
+    resources:
+      - leases
+  - verbs:
+      - create
+      - patch
+    apiGroups:
+      - ''
+    resources:
+      - events
+  - verbs:
+      - create
+    apiGroups:
+      - authentication.k8s.io
+    resources:
+      - tokenreviews
+  - verbs:
+      - create
+    apiGroups:
+      - authorization.k8s.io
+    resources:
+      - subjectaccessreviews
+
